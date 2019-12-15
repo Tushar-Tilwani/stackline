@@ -1,54 +1,47 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { initializeState } from "./actions/initializeState";
+import "./App.css";
+import { GraphContainer, ProductContainer, TableContainer } from "./components";
 
-import logo from './logo.svg';
-import './App.css';
-
-import { simpleAction } from './actions/simpleAction'
-
-/* 
+/*
  * mapDispatchToProps
-*/
+ */
 const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
-})
+  initializeState: () => dispatch(initializeState())
+});
 
-/* 
+/*
  * mapStateToProps
-*/
+ */
 const mapStateToProps = state => ({
-  ...state
-})
+  product: state.product
+});
 
 /**
  * @class App
  * @extends {Component}
  */
 class App extends Component {
-  /**
-   * @memberof App
-   * @summary handles button click 
-   */
-  simpleAction = (event) => {
-    this.props.simpleAction();
+  componentDidMount() {
+    this.props.initializeState();
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+        <header>
+          <span>Stackline Tushar's Assignment</span>
         </header>
-        <pre>
-          {
-            JSON.stringify(this.props)
-          }
-        </pre>
-        <button onClick={this.simpleAction}>Test redux action</button>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <main>
+          <section className="App-side">
+            <ProductContainer data={1} />
+          </section>
+          <section className="App-main">
+            <GraphContainer data={2} />
+            <TableContainer data={3} />
+          </section>
+        </main>
       </div>
     );
   }
