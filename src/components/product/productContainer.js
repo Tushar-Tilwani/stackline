@@ -13,8 +13,8 @@ export const ProductContainer = React.memo(
     return (
       <div className="product-container">
         <img src={image} alt={title} className="product-img" />
-        <p>{title}</p>
-        <p>{subtitle}</p>
+        <p className="product-title">{title}</p>
+        <p className="product-subtitle">{subtitle}</p>
         <div className="product-tags">{tagsJSX}</div>
       </div>
     );

@@ -1,8 +1,3 @@
-.product-container {
-  box-shadow: 5px 10px 18px #ccc;
-  background-color: white;
-}
-
 .product-img {
   max-width: 100%;
   height: auto;
@@ -13,10 +8,22 @@
   flex-wrap: wrap;
   padding: 10px;
   justify-content: space-between;
+  font-size: 12px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
 .product-tag {
   padding: 5px 10px;
   margin: 5px;
   border: 1px solid #ccc;
+}
+
+.product-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-subtitle {
+  font-size: 12px;
 }

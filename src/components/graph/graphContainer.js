@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Chart } from "react-google-charts";
 import "./graph.css";
 
 export const GraphContainer = React.memo(({ sales }) => {
-  const data = sales.reduce(
-    (acc, sale) => {
-      acc.push([
-        new Date(sale.weekEnding),
-        sale.retailSales,
-        sale.wholesaleSales
-      ]);
-      return acc;
-    },
-    [[{ type: "date" }, { type: "number" }, { type: "number" }]]
+  const data = useMemo(
+    () => sales.reduce(
+      (acc, sale) => {
+        acc.push([
+          new Date(sale.weekEnding),
+          sale.retailSales,
+          sale.wholesaleSales
+        ]);
+        return acc;
+      },
+      [[{ type: "date" }, { type: "number" }, { type: "number" }]]
+    ),
+    [sales]
   );
-
-  console.log(data);
 
   return (
     <div className="graph-container">
@@ -24,10 +25,10 @@ export const GraphContainer = React.memo(({ sales }) => {
         data={data}
         width="calc(100% - 10px)"
         height="400px"
-        legend="none"
         options={{
           chart: {
-            title: "Retail Sales"
+            title: "Retail Sales",
+            legend: {position: 'none'}
           }
         }}
       />

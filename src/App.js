@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faBars } from "@fortawesome/free-solid-svg-icons";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { initializeState } from "./actions/initializeState";
@@ -52,6 +54,16 @@ class App extends Component {
                   brand={brand}
                   tags={tags}
                 />
+                <ul className="App-links">
+                  <li>
+                    <FontAwesomeIcon icon={faHome} />
+                    <a href="#">Overview</a>
+                  </li>
+                  <li className="active">
+                    <FontAwesomeIcon icon={faBars} />
+                    <a href="#"> Sales</a>
+                  </li>
+                </ul>
               </section>
               <section className="App-main">
                 <GraphContainer sales={sales} />
