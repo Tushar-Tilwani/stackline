@@ -28,14 +28,14 @@
   display: flex;
   min-width: 50px;
   flex-direction: column;
-  flex-basis: 25%;
-  width: 25%;
+  flex-basis: 20%;
+  width: 20%;
 }
 
 .App-main {
   display: flex;
   min-width: 300px;
   flex-direction: column;
-  flex-basis: 65%;
-  width: 65%;
+  flex-basis: 70%;
+  width: 70%;
 }
