@@ -13,16 +13,18 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  padding-top: 100px;
 }
 
 .App .App-header {
   width: 100%;
-  margin-bottom: 20px;
   padding: 20px;
   display: flex;
   align-items: flex-start;
   background-color: white;
   box-shadow: 5px 10px 18px #ccc;
+  position: fixed;
+  z-index: 5;
 }
 
 .App section {
