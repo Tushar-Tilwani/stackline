@@ -22,7 +22,7 @@ export const GraphContainer = React.memo(({ sales }) => {
       <Chart
         chartType="Line"
         data={data}
-        width="100%"
+        width="calc(100% - 10px)"
         height="400px"
         legend="none"
         options={{

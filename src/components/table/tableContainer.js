@@ -1,5 +1,6 @@
 import React from "react";
 import DataTable from "react-data-table-component";
+import "./table.css";
 
 const columns = [
   {
@@ -34,5 +35,7 @@ const columns = [
 ];
 
 export const TableContainer = React.memo(({ sales }) => (
-  <DataTable title="" columns={columns} data={sales} pagination={true} />
+  <div className="table-container">
+    <DataTable title="" columns={columns} data={sales} pagination={true} />
+  </div>
 ));

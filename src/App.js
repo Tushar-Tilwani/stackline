@@ -38,7 +38,7 @@ class App extends Component {
     const { title, image, subtitle, brand, tags, sales } = product;
     return (
       <div className="App">
-        <header>
+        <header className="App-header">
           <span>Stackline Tushar's Assignment</span>
         </header>
         <main>
